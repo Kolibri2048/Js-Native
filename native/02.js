@@ -93,4 +93,30 @@ const getFilteredArray = (array, filterFucnt) => {
 
 console.log(getFilteredArray(students, el => el.scores > 100));
 
+//Method slice
 
+const mySlice = (array, start = 0, end = array.length) => {
+    const result = []
+    for (let i = start; i < end; i++) {
+        const element = array[i];
+        result.push(array[i])
+    }
+    return result
+}
+
+console.log(mySlice(students, 1, 3))
+
+
+// Method sgift
+const myShift = (array) => {
+    const result = array[0]
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i + 1];
+        
+    }
+    array.length = array.length - 1
+    return result
+}
+
+console.log(myShift(students))
+console.log(students);
