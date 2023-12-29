@@ -29,7 +29,7 @@ const students = [
 ]
 
 // Method map
-// const name = ['Bob','Alex', 'Nick','John']
+const names = ['Bob','Alex', 'Nick','John']
 const getNames = (array) => {
     const result = []
     const getMapetHelp = (el) => el.name
@@ -72,10 +72,10 @@ console.log(getMappedArray(students, (el) => ({...el, isMarried: true})));
 
 //Method push
 
-const myPush = (array, el) => {
-    array[array.length] = el
-    return array.length
-}
+// const myPush = (array, el) => {
+//     array[array.length] = el
+//     return array.length
+// }
 
 
 
@@ -120,3 +120,44 @@ const myShift = (array) => {
 
 console.log(myShift(students))
 console.log(students);
+
+
+console.log(students.slice(1, 3));
+
+const arr = new Array() // Array - функкция конструктор
+
+
+
+// class Students {
+//     constructor (name, age) {
+//         this.name = name
+//         this.age = age
+//     }
+// }
+
+// console.log(new Students('egor', 25));
+
+
+console.log(Array.prototype);
+
+// students.map() => Array => prototype => map => students.map()
+
+// names.map() //=> Array => prototype => map => names.map()
+
+students.map = function() {
+    alert('yo!!')
+}
+
+// students.map()
+
+
+function myPush (el){
+    this[this.length] = el
+    return this.length
+}
+
+Array.prototype.myPush = myPush
+
+names.myPush('Egor')
+console.log(names);
+
