@@ -1,11 +1,17 @@
 const sm = document.getElementById('small')
+const md = document.getElementById('medium')
+const bg = document.getElementById('big')
 
 const handler1 = () => {
-    console.log('sdasd');
+    console.log(1);
 }
 
 const handler2 = () => {
-    console.log('Yo!');
+    console.log(2);
+}
+
+const handler3 = () => {    
+    console.log(3);
 }
 
 //Если мы хотим передать параметром какой то текс то нам надо будет создать ещё одну коллбэк функцию для того что бы вызвать её
@@ -29,4 +35,17 @@ const onClickLogger = () => {
 
 
 //Поэтому сейчас исп addEventListener()
-sm.addEventListener()
+// addEventListenerss позволяет вешать нам столько обработчиков сколько нужно
+// Также addEventListenerss принимает ещё несколько доп настроек 3 параметром которые можно использовать для его контролирование
+sm.addEventListener('click', handler1, {once: true})
+// sm.addEventListener('click', handler2)
+// //Удаляет событие
+// sm.removeEventListener('click', handler1)
+// sm.addEventListener('click', handler1)
+// md.addEventListener('click', handler2)
+// bg.addEventListener('click', handler3)
+//Нельзя добавлять анонимную функцию так как её потом не возможно удалить она ни на что не ссылается sm.addEventListener('click', () => handler('sd))
+sm.addEventListener('click', handler1)
+md.addEventListener('click', handler2)
+// captue: true - вызываем нашу функцию на стадии погружение
+bg.addEventListener('click', handler3, {capture: true})
