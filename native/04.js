@@ -4,7 +4,7 @@ const todoListID_2 = '2'
 // Example 1 struct Date
 const todoLists = [,
     {
-        id: '1',
+        id: todoListID_1,
         title: 'What to lear',
         filter: 'all',
         // tasks: [
@@ -14,7 +14,7 @@ const todoLists = [,
         // ],
     },
     {
-        id: '2',
+        id: todoListID_2,
         title: 'What to buy',
         filter: 'all',
         // tasks: [
@@ -41,12 +41,12 @@ const todoLists = [,
 
 // Example 3 struct Date
 const tasks = {
-    [todoLists[0].id]: [ // '1'
+    [todoListID_1]: [ // '1'
         {id: '3', title: 'HTML', isDone: true},
         {id: '4', title: 'CSS', isDone: true},
         {id: '5', title: 'React', isDone: true},
     ],
-    [todoLists[1].id]: [ // '2'
+    [todoListID_2]: [ // '2'
         {id: '6', title: 'MILK', isDone: true},
         {id: '7', title: 'BEER', isDone: true},
         {id: '8', title: 'MEAT', isDone: true},
